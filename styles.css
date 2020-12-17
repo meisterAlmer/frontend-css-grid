@@ -1,1 +1,74 @@
 /*Maak hier jouw CSS!*/
+html, body {
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 18px;
+}
+
+p {
+    margin: 0;
+}
+
+.container {
+    background-color: #fdefdd;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px auto 50px 50px 50px 50px 50px;
+    grid-template-areas:
+    "item-a"
+    "item-b"
+    "item-c"
+    "item-d"
+    "item-e"
+    "empty"
+    "item-f";
+    grid-gap: 16px;
+}
+
+.container div {
+    border: 2px solid #8a363a;
+    background-color: #ae4449;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#item-a {
+    grid-area: item-a;
+}
+
+#item-b {
+    grid-area: item-b;
+}
+
+#item-c {
+    grid-area: item-c;
+}
+
+#item-d {
+    grid-area: item-d;
+}
+
+#item-e {
+    grid-area: item-e;
+}
+
+#item-f {
+    grid-area: item-f;
+}
+
+@media screen and (min-width:  576px) {
+    .container {
+    background-color: #fdefdd;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 190px 100px minmax(0, auto) 50px;
+    grid-template-areas:
+    "item-a item-c item-c"
+    "item-b item-c item-c"
+    "item-b item-e item-d"
+    "item-b item-e ."
+    "item-f item-f item-f";
+        grid-gap: 16px;
+    }
+}
