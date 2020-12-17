@@ -39,6 +39,7 @@ p {
 
 #item-b {
     grid-area: item-b;
+    padding: 16px;
 }
 
 #item-c {
