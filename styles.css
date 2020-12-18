@@ -1,33 +1,44 @@
-/*Maak hier jouw CSS!*/
-html, body {
-    color: #ffffff;
-    font-family: Arial;
-    font-size: 18px;
+/* Removes all default margin and padding for every object on the page */
+* {
+    margin: 0;
+    padding: 0;
 }
 
-p {
-    margin: 0;
+/* Define all colors used */
+:root {
+    --light-yellow: #fdefdd;
+    --light-red: #ae4449;
+    --dark-red: #8a363a;
+    --text: #ffffff;
+}
+
+/* Some nicer fonts */
+html, body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: var(--text);
 }
 
 .container {
-    background-color: #fdefdd;
+    background-color: var(--light-yellow);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 50px auto 50px 50px 50px 50px 50px;
     grid-template-areas:
-    "item-a"
-    "item-b"
-    "item-c"
-    "item-d"
-    "item-e"
-    "."
-    "item-f";
+        "item-a"
+        "item-b"
+        "item-c"
+        "item-d"
+        "item-e"
+        "."
+        "item-f";
     grid-gap: 16px;
+    padding: 16px;
 }
 
-.container div {
-    border: 2px solid #8a363a;
-    background-color: #ae4449;
+.container > div {
+    border: 2px solid var(--dark-red);
+    background-color: var(--light-red);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,6 +50,7 @@ p {
 
 #item-b {
     grid-area: item-b;
+    /* Some padding added so the paragraph in the div looks nicer */
     padding: 16px;
 }
 
@@ -58,18 +70,18 @@ p {
     grid-area: item-f;
 }
 
+/* Media query for screens 576px and bigger */
 @media screen and (min-width:  576px) {
     .container {
-    background-color: #fdefdd;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 50px 190px 100px minmax(0, auto) 50px;
-    grid-template-areas:
-    "item-a item-c item-c"
-    "item-b item-c item-c"
-    "item-b item-e item-d"
-    "item-b item-e ."
-    "item-f item-f item-f";
-        grid-gap: 16px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 50px 190px 100px auto 50px;
+        grid-template-areas:
+            "item-a item-c item-c"
+            "item-b item-c item-c"
+            "item-b item-e item-d"
+            "item-b item-e ."
+            "item-f item-f item-f";
+            grid-gap: 16px;
     }
 }
